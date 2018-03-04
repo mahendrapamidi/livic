@@ -13,7 +13,7 @@
 			.container {
 				padding: 0;
 				margin: 0;
-				min-width: 100vw;
+				width: 100%;
 			}
 			.gallery-container p.page-description {
                 text-align: center;
@@ -24,37 +24,129 @@
             html,body {
                 margin: 0;
 				padding: 0;
-				overflow-x: hidden;
+                width: 100vw;
+                overflow: hidden;
             }
             .container.gallery-container {
                 color: #fff;
                 min-height: 100vh;
+                width: 100vw;
                 border-radius: 20px;
-                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
 			}
-			body::before {
-				position: fixed;
-				background: url(images/sky.jpg) no-repeat center center fixed;
-				content: '';
-				z-index: -1;
-				width: 100%;
-				height: 100%;
-				position:absolute; 
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-				-webkit-filter: blur(5px);
-				-moz-filter: blur(5px);
-				-o-filter: blur(5px);
-				-ms-filter: blur(5px);
-				filter: blur(8px);
-			  }
+            header a, a:visited {
+    text-decoration:none;
+    color:#fcfcfc;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:-20;
+}
+
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:-15;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+    z-index:3;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
+            #logo {
+                text-align:center;
+                z-index: 200;
+                position: relative;
+                top: 25vh;
+            }
+            .btn {
+                margin: 0 auto;
+                position: absolute;
+                bottom: 1em;
+            }
+            #about {
+                text-align:center;color:white;position:absolute;top:110vh;background: black;width: 100vw; height: 100vh; z-index: 20000; margin: 0; font-size: 1.5em;
+            }
+            #logo-img {
+                width:45%;
+            }
+            #abt-btn {
+                width: 6vw;
+                margin: 0 47vw;
+            }
+            @media screen and (max-width:40em) {
+                #about { 
+                    font-size: 1em;
+                }
+                #logo img {
+                    width: 90%;
+                }
+                #abt-btn {
+                    width: 20vw;
+                    margin:0 40vw;
+                }
+            }
 		</style>
 	</head>
 	<body style="padding:0;">
-		<div class="container gallery-container" style="z-index:1000">
-				<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container gallery-container" style="z-index:1000" style="margin: 0;padding: 0;width: 100%;">
+				<nav class="navbar navbar-fixed-top navbar-inverse" style="width: 100vw;margin: 0;padding: 0;">
 						<div class="container-fluid">
 							<!-- Brand and toggle get grouped for better mobile display -->
 							<div class="navbar-header">
@@ -81,18 +173,38 @@
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
-				</nav>
-			<h1 style="text-align:center;color:white;font-family: 'Droid Sans', sans-serif;
-			font-weight: bold;margin-top: 50px;">Acumen-Civil</h1>	
-			<div id="logo" class="row" style="text-align:center;">
-				<img style="width:30%;" src="images/logo-trans.png" alt="Acumen-Civil Logo"></div>
-				<div class="row" style="text-align:center;color:white;position:relative;top:0;">
-					<div class="col-md-12 col-lg-12 col-sm-12">
-						<p style="font-size:150%;margin:0.5em;">Acumen is the annual technical fest of Vasavi College of Engineering, Hyderabad. With footfalls of over 2000 witnessed in 2012,13,14.It is well known for being one of the biggest and best technical fests in Hyderabad. With a plethora of events, ACUMEN CIVIL promises to be a platform for ideation, creativity and innovation. It allows the students to break free from the monotony of classroom learning. We strongly believe in what Roosevelt once opined on Civil Engineers: “Far better it is to dare mighty things, to win glorious triumphs, even though checkered by failure, than to rank with those poor spirits who neither enjoy much nor suffer much, because they live in the gray twilight that knows not victory nor defeat.” Civil engineers today will serve as master builders, environmental stewards, innovators and integrators, managers of risk and uncertainty, and leaders in shaping public policy. Acumen is one step we take towards nurturing this ambitious dream!!!! The 18th edition of the two day fest will be held on 7th March,2015. With exciting prizes and never seen before events, Acumen Civil promises to surpass all its previous editions!!!</p>
-					</div>
-				</div>
+				</nav>	
+			<div id="logo" class="row" style="margin: 0; padding: 0; width: 100%;">
+				<img id="logo-img" style="" src="images/logo-trans.png" alt="Acumen-Civil Logo"></div>
 			</div>
-		</div>
-
+            <script type="text/javascript">
+                $("#about").hide();
+                function aboutus() {
+                    $("#about").show();
+                    $("#about").animate(
+                        {top:0,opacity:"1"}, 800
+                    );
+                }
+                function closeabout() {
+                    $("#about").hide();
+                    $("#about").animate(
+                        {top:"110vh",opacity:"0"}, 800
+                    );
+                }
+                //aboutus();
+            </script>
+			<div id="about" style="">
+                <div style="position: relative; top: 25vh;">    
+                <p>It is difficult to determine the history of emergence and beginning of civil engineering.   However, that the history of civil engineering is a mirror of the history of human beings on this earth. </p>
+                <h3>FROM CAVES TO THE CONSTRUCTION ON MARS</h3>
+                <p>Taking this point and its essence into account, Acumen-2018 portrays the transition of Civil Engineering along with the time. It is a great platform for the Youth to know the advances in the field of Civil Engineering  </p>
+                <button class="btn btn-success" onclick="closeabout()" style="position: relative; top: 5em;">Close</button>
+                </div>
+                
+            </div>
+            <button id="abt-btn" onclick="aboutus()" class="btn btn-success">About us</button>
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+            <img src="images/earth.png" style="height: 10em; width: 100%;z-index: -10;position: absolute;bottom: 0;">
 	</body>
 </html>
